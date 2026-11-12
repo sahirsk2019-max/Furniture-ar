@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>AR View</title>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+  <style>
+    body { margin: 0; font-family: sans-serif; text-align: center; background-color: #f7f7f8; }
+    model-viewer { width: 100vw; height: 100vh; }
+    .ar-button {
+      background-color: #0f766e; border-radius: 50px; border: none;
+      position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+      padding: 15px 30px; color: white; font-weight: bold; font-size: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- We are using Google's free test Astronaut model for now -->
+  <model-viewer 
+    src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+    alt="A 3D model"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    shadow-intensity="1"
+    autoplay>
+    <button class="ar-button" slot="ar-button">👋 Place in your room</button>
+  </model-viewer>
+</body>
+</html>
